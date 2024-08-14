@@ -2,6 +2,7 @@ package org.example;
 
 import java.util.*;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -83,8 +84,13 @@ public class Main {
         }
 
         Collections.sort(pokemons);
+        pokemons = pokemons.stream().filter(pokemon -> {
+            return (pokemon.getDoubleDefense().size()+pokemon.getFourDefense().size()+pokemon.getTotalDefense().size())>3
+                    && (pokemon.getDoubleWeakness().size()+pokemon.getFourWeakness().size())<3;
+        }).collect(Collectors.toList());
         System.out.println("属性---平均分---攻击分---防御分---钛晶属性---二倍抵抗---四倍抵抗---完全抵抗---二倍弱点---四倍弱点");
         for(Pokemon pokemon:pokemons){
+
             System.out.println(pokemon.getTwoShuxing()+"---"+pokemon.getAverageScore()+"---"+
                     pokemon.getAttackScore()+"---"+pokemon.getDefendScore()+"---"+pokemon.getTaijinshuxing()+"---"+
                     pokemon.getDoubleDefenseName().toString()+"---"+ pokemon.getFourDefenseName().toString()+"---"+pokemon.getTotalDefenseName()+"---"+
@@ -157,8 +163,8 @@ public class Main {
     }
 
 
-    private static String[] shuxing = {"一般", "斗", "飞", "毒", "地", "岩", "虫", "幽", "钢", "火", "水", "草", "电", "超", "冰", "龙", "恶", "妖精"};
-    private static double[][] maxtrix = {
+    public static String[] shuxing = {"一般", "斗", "飞", "毒", "地", "岩", "虫", "幽", "钢", "火", "水", "草", "电", "超", "冰", "龙", "恶", "妖精"};
+    public static double[][] maxtrix = {
             {1, 1, 1, 1, 1, 0.5, 1,0, 0.5, 1, 1, 1, 1, 1, 1, 1, 1, 1},
             {2, 1, 0.5, 0.5, 1, 2, 0.5, 0, 2, 1, 1, 1, 1, 0.5, 2, 1, 2, 0.5},
             {1, 2, 1, 1, 1, 0.5, 2, 1, 0.5, 1, 1, 2, 0.5, 1, 1, 1, 1, 1},
@@ -212,4 +218,6 @@ public class Main {
         pokemons.add(pokemon);
         count ++;
     }
+
+
 }

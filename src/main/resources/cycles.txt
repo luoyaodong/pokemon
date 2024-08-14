@@ -1,0 +1,39 @@
+"C:\Program Files\Java\jdk-12.0.2\bin\java.exe" -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:56462,suspend=y,server=n -javaagent:C:\Users\loveva\AppData\Local\JetBrains\IdeaIC2022.3\captureAgent\debugger-agent.jar -Dfile.encoding=UTF-8 -classpath "C:\Users\loveva\IdeaProjects\Pokemon\target\classes;D:\repository\cn\hutool\hutool-all\5.8.16\hutool-all-5.8.16.jar;D:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2022.3.2\lib\idea_rt.jar" org.example.MainCycles
+Connected to the target VM, address: '127.0.0.1:56462', transport: 'socket'
+斗===>岩===>飞===>
+斗===>钢===>妖精===>
+斗===>冰===>飞===>
+斗===>恶===>超===>
+飞===>草===>岩===>
+地===>钢===>冰===>
+地===>电===>水===>
+岩===>虫===>草===>
+
+毒===>草===>地===>
+地===>岩===>冰===>
+地===>火===>草===>
+地===>火===>冰===>
+岩===>火===>钢===>
+岩===>火===>草===>
+岩===>冰===>草===>
+火===>草===>水===>
+钢3
+妖精1
+超1
+岩7
+草7
+火5
+虫1
+冰5
+地6
+毒1
+水2
+电1
+恶1
+斗4
+龙1
+幽1
+飞3
+Disconnected from the target VM, address: '127.0.0.1:56462', transport: 'socket'
+
+Process finished with exit code 0
